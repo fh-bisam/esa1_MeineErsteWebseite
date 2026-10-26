@@ -73,6 +73,15 @@ function zeigeTeams(teamDaten: Team[], listenId: string): void {
     // Vorhandene Einträge entfernen
     liste.innerHTML = "";
 
+    // Meldung anzeigen, wenn keine Teams gefunden wurden
+    if (teamDaten.length === 0) {
+        const meldung = document.createElement("li");
+        meldung.textContent = "Keine passenden Teams gefunden.";
+        meldung.classList.add("keine-teams");
+        liste.appendChild(meldung);
+        return;
+    }
+
     // Alle übergebenen Teams anzeigen
     for (const team of teamDaten) {
 
@@ -97,15 +106,96 @@ function zeigeTeams(teamDaten: Team[], listenId: string): void {
     }
 }
 
-// Teams nach Conference filtern
-const nfcTeams: Team[] = teams.filter(
-    (team: Team) => team.conference === "NFC"
-);
 
-const afcTeams: Team[] = teams.filter(
-    (team: Team) => team.conference === "AFC"
-);
+// Funktion zum Filtern der Teams
+function filtereTeams(
+    teamDaten: Team[],
+    suchtext: string,
+    division: string
+): Team[] {
 
-// Beide Conferences getrennt anzeigen
-zeigeTeams(nfcTeams, "#team-liste-nfc");
-zeigeTeams(afcTeams, "#team-liste-afc");
+    return teamDaten.filter((team: Team) => {
+
+        // Teamname mit Suchtext vergleichen
+        const passtZumNamen = team.name
+            .toLowerCase()
+            .includes(suchtext.toLowerCase().trim());
+
+        // Division überprüfen
+        const passtZurDivision =
+            division === "alle" || team.division === division;
+
+        // Beide Bedingungen müssen erfüllt sein
+        return passtZumNamen && passtZurDivision;
+    });
+}
+
+// Funktion zur Aktualisierung der Teamübersicht
+function aktualisiereTeamAnzeige(): void {
+
+    const suchfeld =
+        document.querySelector<HTMLInputElement>("#teamsuche");
+
+    const divisionsFilter =
+        document.querySelector<HTMLSelectElement>("#division-filter");
+
+    const anzahl =
+        document.querySelector<HTMLParagraphElement>("#team-anzahl");
+
+    // Prüfen, ob die HTML-Elemente vorhanden sind
+    if (!suchfeld || !divisionsFilter || !anzahl) {
+        return;
+    }
+
+    // Teams nach Suche und Division filtern
+    const gefilterteTeams = filtereTeams(
+        teams,
+        suchfeld.value,
+        divisionsFilter.value
+    );
+
+    // Ergebnis nach Conferences aufteilen
+    const nfcTeams = gefilterteTeams.filter(
+        (team: Team) => team.conference === "NFC"
+    );
+
+    const afcTeams = gefilterteTeams.filter(
+        (team: Team) => team.conference === "AFC"
+    );
+
+    // Beide Listen neu anzeigen
+    zeigeTeams(nfcTeams, "#team-liste-nfc");
+    zeigeTeams(afcTeams, "#team-liste-afc");
+
+    // Anzahl der gefundenen Teams anzeigen
+    anzahl.textContent =
+        `${gefilterteTeams.length} von ${teams.length} Teams gefunden`;
+}
+
+// Event-Listener für Suchfeld und Divisionsfilter
+const suchfeld =
+    document.querySelector<HTMLInputElement>("#teamsuche");
+
+const divisionsFilter =
+    document.querySelector<HTMLSelectElement>("#division-filter");
+
+if (suchfeld && divisionsFilter) {
+
+    // Reaktion auf Eingaben im Suchfeld
+    suchfeld.addEventListener("input", aktualisiereTeamAnzeige);
+
+    // Reaktion auf Änderung der Division
+    divisionsFilter.addEventListener("change", aktualisiereTeamAnzeige);
+}
+
+// Verhindert das Absenden des Filterformulars
+const formular = document.querySelector<HTMLFormElement>("#team-filter");
+
+if (formular) {
+    formular.addEventListener("submit", (event: Event): void => {
+        event.preventDefault();
+    });
+}
+
+// Teams beim ersten Laden anzeigen
+aktualisiereTeamAnzeige();

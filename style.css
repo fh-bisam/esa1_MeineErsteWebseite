@@ -142,3 +142,68 @@ footer {
     background-color: #eef7f3;
 }
 
+/* Suchfeld und Divisionsfilter */
+#team-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    background-color: #eef2f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+/* Beschriftung */
+#team-filter label {
+    font-weight: bold;
+    color: #1d3557;
+}
+
+/* Eingabefelder */
+#team-filter input,
+#team-filter select {
+    padding: 10px;
+    border: 1px solid #aebbc8;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+    color: #333333;
+}
+
+/* Sichtbare Tastaturfokussierung */
+#team-filter input:focus-visible,
+#team-filter select:focus-visible {
+    outline: 2px solid #126b4f;
+    outline-offset: 2px;
+}
+
+/* Ergebnisanzahl */
+#team-anzahl {
+    color: #1d3557;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Meldung bei leeren Ergebnissen */
+.keine-teams {
+    color: #555555;
+    font-style: italic;
+    padding: 15px;
+}
+
+/* Darstellung auf kleinen Bildschirmen */
+@media (max-width: 600px) {
+    #team-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #team-filter input,
+    #team-filter select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+

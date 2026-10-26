@@ -41,6 +41,31 @@
                 besitzt vier Divisions mit jeweils vier Teams.
             </p>
 
+            <!-- Suche und Divisionsfilter -->
+            <form id="team-filter">
+
+                <label for="teamsuche">Team suchen:</label>
+                <input type="search" id="teamsuche" placeholder="z.B. Green Bay Packers">
+
+                <label for="division-filter">Division auswählen:</label>
+                <select id="division-filter">
+                    <option value="alle">Alle Divisions</option>
+                    <option value="AFC East">AFC East</option>
+                    <option value="AFC North">AFC North</option>
+                    <option value="AFC South">AFC South</option>
+                    <option value="AFC West">AFC West</option>
+                    <option value="NFC East">NFC East</option>
+                    <option value="NFC North">NFC North</option>
+                    <option value="NFC South">NFC South</option>
+                    <option value="NFC West">NFC West</option>
+                </select>
+
+            </form>
+
+            <p id="team-anzahl" aria-live="polite">
+                32 von 32 Teams gefunden
+            </p>
+
             <h3 class="konferenz-titel">
                 AFC - American Football Conference
             </h3>
