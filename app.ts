@@ -438,3 +438,47 @@ aktualisiereTeamAnzeige();
 
 // Favoritenliste beim ersten Laden anzeigen
 zeigeFavoriten();
+
+// Navigationslinks auswählen
+const navigationsLinks =
+    document.querySelectorAll<HTMLAnchorElement>('nav a[href^="#"]');
+
+// Ausgewählten Navigationspunkt markieren
+function markiereNavigation(ziel: string): void {
+    navigationsLinks.forEach((link: HTMLAnchorElement): void => {
+        const istAktiv = link.getAttribute("href") === ziel;
+
+        // CSS-Klasse setzen oder entfernen
+        link.classList.toggle("aktiv", istAktiv);
+
+        // ARIA-Attribut aktualisieren
+        if (istAktiv) {
+            link.setAttribute("aria-current", "location");
+        } else {
+            link.removeAttribute("aria-current");
+        }
+    });
+}
+
+// Auf Klicks in der Navigation reagieren
+navigationsLinks.forEach((link: HTMLAnchorElement): void => {
+    link.addEventListener("click", (): void => {
+        const ziel = link.getAttribute("href");
+
+        if (ziel) {
+            markiereNavigation(ziel);
+        }
+    });
+});
+
+// Auch den Link im Startbereich berücksichtigen
+const startLink = document.querySelector<HTMLAnchorElement>(".start-link");
+
+if (startLink) {
+    startLink.addEventListener("click", (): void => {
+        markiereNavigation("#teams");
+    });
+}
+
+// Beim Laden den aktuellen Bereich markieren
+markiereNavigation(window.location.hash || "#start");

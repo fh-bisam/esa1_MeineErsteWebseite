@@ -365,3 +365,35 @@ footer {
         box-sizing: border-box;
     }
 }
+
+/* Sticky Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Aktiver Navigationspunkt */
+nav a.aktiv {
+    background-color: #e5e7eb;
+    color: #1f2937;
+}
+
+/* Abstand beim Springen zu einem Abschnitt */
+main > section {
+    scroll-margin-top: 90px;
+}
+
+/* Weiches Scrollen, wenn nicht deaktiviert */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Anpassung für Smartphones */
+@media (max-width: 600px) {
+    main > section {
+        scroll-margin-top: 140px;
+    }
+}
