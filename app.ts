@@ -224,17 +224,11 @@ let favoriten: string[] = [];
 
 // Favorit hinzufügen oder entfernen
 function wechsleFavorit(teamName: string): void {
-
     // Prüfen, ob das Team bereits ein Favorit ist
     if (favoriten.includes(teamName)) {
-
         // Vorhandenen Favoriten entfernen
-        favoriten = favoriten.filter(
-            (name: string) => name !== teamName
-        );
-
+        favoriten = favoriten.filter((name: string) => name !== teamName);
     } else {
-
         // Neuen Favoriten hinzufügen
         favoriten.push(teamName);
     }
@@ -245,14 +239,10 @@ function wechsleFavorit(teamName: string): void {
 
 // Favoriten auf der Webseite anzeigen
 function zeigeFavoriten(): void {
+    const liste = document.querySelector<HTMLUListElement>("#favoriten-liste");
 
-    const liste = document.querySelector<HTMLUListElement>(
-        "#favoriten-liste"
-    );
-
-    const hinweis = document.querySelector<HTMLParagraphElement>(
-        "#favoriten-hinweis"
-    );
+    const hinweis =
+        document.querySelector<HTMLParagraphElement>("#favoriten-hinweis");
 
     if (!liste || !hinweis) {
         return;
@@ -265,13 +255,11 @@ function zeigeFavoriten(): void {
     if (favoriten.length === 0) {
         hinweis.textContent = "Noch keine Favoriten ausgewählt.";
     } else {
-        hinweis.textContent =
-            `${favoriten.length} Favorit(en) ausgewählt.`;
+        hinweis.textContent = `${favoriten.length} Favorit(en) ausgewählt.`;
     }
 
     // Favoriten als Liste anzeigen
     for (const name of favoriten) {
-
         const eintrag = document.createElement("li");
         eintrag.textContent = name;
 
@@ -282,9 +270,8 @@ function zeigeFavoriten(): void {
 // Beschriftung des Favoritenbuttons aktualisieren
 function aktualisiereFavoritenButton(
     button: HTMLButtonElement,
-    teamName: string
+    teamName: string,
 ): void {
-
     const istFavorit = favoriten.includes(teamName);
 
     if (istFavorit) {
@@ -292,15 +279,12 @@ function aktualisiereFavoritenButton(
         button.setAttribute("aria-pressed", "true");
         button.setAttribute(
             "aria-label",
-            `${teamName} aus Favoriten entfernen`
+            `${teamName} aus Favoriten entfernen`,
         );
     } else {
         button.textContent = "Als Favorit auswählen";
         button.setAttribute("aria-pressed", "false");
-        button.setAttribute(
-            "aria-label",
-            `${teamName} als Favorit auswählen`
-        );
+        button.setAttribute("aria-label", `${teamName} als Favorit auswählen`);
     }
 }
 
@@ -338,34 +322,32 @@ function zeigeTeams(teamDaten: Team[], listenId: string): void {
         const stadion = document.createElement("p");
         stadion.textContent = `Stadion: ${team.stadion}`;
 
-// Favoritenbutton erstellen
-const favoritButton = document.createElement("button");
+        // Favoritenbutton erstellen
+        const favoritButton = document.createElement("button");
 
-favoritButton.type = "button";
-favoritButton.classList.add("favorit-button");
+        favoritButton.type = "button";
+        favoritButton.classList.add("favorit-button");
 
-// Richtige Beschriftung setzen
-aktualisiereFavoritenButton(favoritButton, team.name);
+        // Richtige Beschriftung setzen
+        aktualisiereFavoritenButton(favoritButton, team.name);
 
-// Auf Klick reagieren
-favoritButton.addEventListener("click", (): void => {
+        // Auf Klick reagieren
+        favoritButton.addEventListener("click", (): void => {
+            // Favorit hinzufügen oder entfernen
+            wechsleFavorit(team.name);
 
-    // Favorit hinzufügen oder entfernen
-    wechsleFavorit(team.name);
+            // Buttonbeschriftung aktualisieren
+            aktualisiereFavoritenButton(favoritButton, team.name);
+        });
 
-    // Buttonbeschriftung aktualisieren
-    aktualisiereFavoritenButton(favoritButton, team.name);
-});
+        // Elemente zur Teamkarte hinzufügen
+        artikel.appendChild(titel);
+        artikel.appendChild(division);
+        artikel.appendChild(stadion);
+        artikel.appendChild(favoritButton);
 
-// Elemente zur Teamkarte hinzufügen
-artikel.appendChild(titel);
-artikel.appendChild(division);
-artikel.appendChild(stadion);
-artikel.appendChild(favoritButton);
-
-eintrag.appendChild(artikel);
-liste.appendChild(eintrag);
-
+        eintrag.appendChild(artikel);
+        liste.appendChild(eintrag);
     }
 }
 

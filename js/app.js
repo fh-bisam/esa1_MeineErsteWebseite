@@ -233,8 +233,7 @@ function zeigeFavoriten() {
         hinweis.textContent = "Noch keine Favoriten ausgewählt.";
     }
     else {
-        hinweis.textContent =
-            `${favoriten.length} Favorit(en) ausgewählt.`;
+        hinweis.textContent = `${favoriten.length} Favorit(en) ausgewählt.`;
     }
     // Favoriten als Liste anzeigen
     for (const name of favoriten) {
