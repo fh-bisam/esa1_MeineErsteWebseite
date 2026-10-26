@@ -1,0 +1,24 @@
+{
+  "name": "esa1_meineerstewebseite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fh-bisam/esa1_MeineErsteWebseite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fh-bisam/esa1_MeineErsteWebseite/issues"
+  },
+  "homepage": "https://github.com/fh-bisam/esa1_MeineErsteWebseite#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

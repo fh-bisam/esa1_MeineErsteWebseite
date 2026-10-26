@@ -1,0 +1,91 @@
+
+/* Allgemeine Seitengestaltung */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Kopfbereich */
+header {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin: 8px 0 0;
+}
+
+/* Hauptnavigation */
+nav {
+    background-color: #126b4f;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 12px;
+    display: inline-block;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    text-decoration: underline;
+}
+
+/* Hauptinhalt */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Einzelne Inhaltsbereiche */
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    color: #1d3557;
+    margin-top: 0;
+}
+
+/* Fußbereich */
+footer {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Anpassung für kleinere Bildschirme */
+@media (max-width: 600px) {
+    nav a {
+        margin: 5px 8px;
+    }
+
+    main {
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 18px;
+    }
+}
