@@ -206,4 +206,56 @@ footer {
     }
 }
 
+/* Favoritenbutton in den Teamkarten */
+.favorit-button {
+    background-color: #126b4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* Button bei Mausberührung */
+.favorit-button:hover {
+    background-color: #0d503b;
+}
+
+/* Ausgewählter Favorit */
+.favorit-button[aria-pressed="true"] {
+    background-color: #1d3557;
+}
+
+/* Tastaturbedienung */
+.favorit-button:focus-visible {
+    outline: 3px solid #b8860b;
+    outline-offset: 3px;
+}
+
+/* Favoritenliste */
+#favoriten-liste {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* Einzelne Favoriten */
+#favoriten-liste li {
+    background-color: #eef7f3;
+    border-left: 4px solid #126b4f;
+    border-radius: 4px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #1d3557;
+}
+
+/* Hinweistext */
+#favoriten-hinweis {
+    color: #555555;
+    font-size: 14px;
+}
+
 

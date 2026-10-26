@@ -3,46 +3,260 @@
 // Alle 32 NFL-Teams
 const teams = [
     // NFC East
-    { name: "Dallas Cowboys", conference: "NFC", division: "NFC East", stadion: "AT&T Stadium" },
-    { name: "New York Giants", conference: "NFC", division: "NFC East", stadion: "MetLife Stadium" },
-    { name: "Philadelphia Eagles", conference: "NFC", division: "NFC East", stadion: "Lincoln Financial Field" },
-    { name: "Washington Commanders", conference: "NFC", division: "NFC East", stadion: "Northwest Stadium" },
+    {
+        name: "Dallas Cowboys",
+        conference: "NFC",
+        division: "NFC East",
+        stadion: "AT&T Stadium",
+    },
+    {
+        name: "New York Giants",
+        conference: "NFC",
+        division: "NFC East",
+        stadion: "MetLife Stadium",
+    },
+    {
+        name: "Philadelphia Eagles",
+        conference: "NFC",
+        division: "NFC East",
+        stadion: "Lincoln Financial Field",
+    },
+    {
+        name: "Washington Commanders",
+        conference: "NFC",
+        division: "NFC East",
+        stadion: "Northwest Stadium",
+    },
     // NFC North
-    { name: "Chicago Bears", conference: "NFC", division: "NFC North", stadion: "Soldier Field" },
-    { name: "Detroit Lions", conference: "NFC", division: "NFC North", stadion: "Ford Field" },
-    { name: "Green Bay Packers", conference: "NFC", division: "NFC North", stadion: "Lambeau Field" },
-    { name: "Minnesota Vikings", conference: "NFC", division: "NFC North", stadion: "U.S. Bank Stadium" },
+    {
+        name: "Chicago Bears",
+        conference: "NFC",
+        division: "NFC North",
+        stadion: "Soldier Field",
+    },
+    {
+        name: "Detroit Lions",
+        conference: "NFC",
+        division: "NFC North",
+        stadion: "Ford Field",
+    },
+    {
+        name: "Green Bay Packers",
+        conference: "NFC",
+        division: "NFC North",
+        stadion: "Lambeau Field",
+    },
+    {
+        name: "Minnesota Vikings",
+        conference: "NFC",
+        division: "NFC North",
+        stadion: "U.S. Bank Stadium",
+    },
     // NFC South
-    { name: "Atlanta Falcons", conference: "NFC", division: "NFC South", stadion: "Mercedes-Benz Stadium" },
-    { name: "Carolina Panthers", conference: "NFC", division: "NFC South", stadion: "Bank of America Stadium" },
-    { name: "New Orleans Saints", conference: "NFC", division: "NFC South", stadion: "Caesars Superdome" },
-    { name: "Tampa Bay Buccaneers", conference: "NFC", division: "NFC South", stadion: "Raymond James Stadium" },
+    {
+        name: "Atlanta Falcons",
+        conference: "NFC",
+        division: "NFC South",
+        stadion: "Mercedes-Benz Stadium",
+    },
+    {
+        name: "Carolina Panthers",
+        conference: "NFC",
+        division: "NFC South",
+        stadion: "Bank of America Stadium",
+    },
+    {
+        name: "New Orleans Saints",
+        conference: "NFC",
+        division: "NFC South",
+        stadion: "Caesars Superdome",
+    },
+    {
+        name: "Tampa Bay Buccaneers",
+        conference: "NFC",
+        division: "NFC South",
+        stadion: "Raymond James Stadium",
+    },
     // NFC West
-    { name: "Arizona Cardinals", conference: "NFC", division: "NFC West", stadion: "State Farm Stadium" },
-    { name: "Los Angeles Rams", conference: "NFC", division: "NFC West", stadion: "SoFi Stadium" },
-    { name: "San Francisco 49ers", conference: "NFC", division: "NFC West", stadion: "Levi's Stadium" },
-    { name: "Seattle Seahawks", conference: "NFC", division: "NFC West", stadion: "Lumen Field" },
+    {
+        name: "Arizona Cardinals",
+        conference: "NFC",
+        division: "NFC West",
+        stadion: "State Farm Stadium",
+    },
+    {
+        name: "Los Angeles Rams",
+        conference: "NFC",
+        division: "NFC West",
+        stadion: "SoFi Stadium",
+    },
+    {
+        name: "San Francisco 49ers",
+        conference: "NFC",
+        division: "NFC West",
+        stadion: "Levi's Stadium",
+    },
+    {
+        name: "Seattle Seahawks",
+        conference: "NFC",
+        division: "NFC West",
+        stadion: "Lumen Field",
+    },
     // AFC East
-    { name: "Buffalo Bills", conference: "AFC", division: "AFC East", stadion: "Highmark Stadium" },
-    { name: "Miami Dolphins", conference: "AFC", division: "AFC East", stadion: "Hard Rock Stadium" },
-    { name: "New England Patriots", conference: "AFC", division: "AFC East", stadion: "Gillette Stadium" },
-    { name: "New York Jets", conference: "AFC", division: "AFC East", stadion: "MetLife Stadium" },
+    {
+        name: "Buffalo Bills",
+        conference: "AFC",
+        division: "AFC East",
+        stadion: "Highmark Stadium",
+    },
+    {
+        name: "Miami Dolphins",
+        conference: "AFC",
+        division: "AFC East",
+        stadion: "Hard Rock Stadium",
+    },
+    {
+        name: "New England Patriots",
+        conference: "AFC",
+        division: "AFC East",
+        stadion: "Gillette Stadium",
+    },
+    {
+        name: "New York Jets",
+        conference: "AFC",
+        division: "AFC East",
+        stadion: "MetLife Stadium",
+    },
     // AFC North
-    { name: "Baltimore Ravens", conference: "AFC", division: "AFC North", stadion: "M&T Bank Stadium" },
-    { name: "Cincinnati Bengals", conference: "AFC", division: "AFC North", stadion: "Paycor Stadium" },
-    { name: "Cleveland Browns", conference: "AFC", division: "AFC North", stadion: "Huntington Bank Field" },
-    { name: "Pittsburgh Steelers", conference: "AFC", division: "AFC North", stadion: "Acrisure Stadium" },
+    {
+        name: "Baltimore Ravens",
+        conference: "AFC",
+        division: "AFC North",
+        stadion: "M&T Bank Stadium",
+    },
+    {
+        name: "Cincinnati Bengals",
+        conference: "AFC",
+        division: "AFC North",
+        stadion: "Paycor Stadium",
+    },
+    {
+        name: "Cleveland Browns",
+        conference: "AFC",
+        division: "AFC North",
+        stadion: "Huntington Bank Field",
+    },
+    {
+        name: "Pittsburgh Steelers",
+        conference: "AFC",
+        division: "AFC North",
+        stadion: "Acrisure Stadium",
+    },
     // AFC South
-    { name: "Houston Texans", conference: "AFC", division: "AFC South", stadion: "NRG Stadium" },
-    { name: "Indianapolis Colts", conference: "AFC", division: "AFC South", stadion: "Lucas Oil Stadium" },
-    { name: "Jacksonville Jaguars", conference: "AFC", division: "AFC South", stadion: "EverBank Stadium" },
-    { name: "Tennessee Titans", conference: "AFC", division: "AFC South", stadion: "Nissan Stadium" },
+    {
+        name: "Houston Texans",
+        conference: "AFC",
+        division: "AFC South",
+        stadion: "NRG Stadium",
+    },
+    {
+        name: "Indianapolis Colts",
+        conference: "AFC",
+        division: "AFC South",
+        stadion: "Lucas Oil Stadium",
+    },
+    {
+        name: "Jacksonville Jaguars",
+        conference: "AFC",
+        division: "AFC South",
+        stadion: "EverBank Stadium",
+    },
+    {
+        name: "Tennessee Titans",
+        conference: "AFC",
+        division: "AFC South",
+        stadion: "Nissan Stadium",
+    },
     // AFC West
-    { name: "Denver Broncos", conference: "AFC", division: "AFC West", stadion: "Empower Field at Mile High" },
-    { name: "Kansas City Chiefs", conference: "AFC", division: "AFC West", stadion: "Arrowhead Stadium" },
-    { name: "Las Vegas Raiders", conference: "AFC", division: "AFC West", stadion: "Allegiant Stadium" },
-    { name: "Los Angeles Chargers", conference: "AFC", division: "AFC West", stadion: "SoFi Stadium" }
+    {
+        name: "Denver Broncos",
+        conference: "AFC",
+        division: "AFC West",
+        stadion: "Empower Field at Mile High",
+    },
+    {
+        name: "Kansas City Chiefs",
+        conference: "AFC",
+        division: "AFC West",
+        stadion: "Arrowhead Stadium",
+    },
+    {
+        name: "Las Vegas Raiders",
+        conference: "AFC",
+        division: "AFC West",
+        stadion: "Allegiant Stadium",
+    },
+    {
+        name: "Los Angeles Chargers",
+        conference: "AFC",
+        division: "AFC West",
+        stadion: "SoFi Stadium",
+    },
 ];
+// Liste der ausgewählten Lieblingsmannschaften
+let favoriten = [];
+// Favorit hinzufügen oder entfernen
+function wechsleFavorit(teamName) {
+    // Prüfen, ob das Team bereits ein Favorit ist
+    if (favoriten.includes(teamName)) {
+        // Vorhandenen Favoriten entfernen
+        favoriten = favoriten.filter((name) => name !== teamName);
+    }
+    else {
+        // Neuen Favoriten hinzufügen
+        favoriten.push(teamName);
+    }
+    // Favoritenliste aktualisieren
+    zeigeFavoriten();
+}
+// Favoriten auf der Webseite anzeigen
+function zeigeFavoriten() {
+    const liste = document.querySelector("#favoriten-liste");
+    const hinweis = document.querySelector("#favoriten-hinweis");
+    if (!liste || !hinweis) {
+        return;
+    }
+    // Alte Einträge entfernen
+    liste.innerHTML = "";
+    // Hinweistext aktualisieren
+    if (favoriten.length === 0) {
+        hinweis.textContent = "Noch keine Favoriten ausgewählt.";
+    }
+    else {
+        hinweis.textContent =
+            `${favoriten.length} Favorit(en) ausgewählt.`;
+    }
+    // Favoriten als Liste anzeigen
+    for (const name of favoriten) {
+        const eintrag = document.createElement("li");
+        eintrag.textContent = name;
+        liste.appendChild(eintrag);
+    }
+}
+// Beschriftung des Favoritenbuttons aktualisieren
+function aktualisiereFavoritenButton(button, teamName) {
+    const istFavorit = favoriten.includes(teamName);
+    if (istFavorit) {
+        button.textContent = "Favorit entfernen";
+        button.setAttribute("aria-pressed", "true");
+        button.setAttribute("aria-label", `${teamName} aus Favoriten entfernen`);
+    }
+    else {
+        button.textContent = "Als Favorit auswählen";
+        button.setAttribute("aria-pressed", "false");
+        button.setAttribute("aria-label", `${teamName} als Favorit auswählen`);
+    }
+}
 // Funktion zur Anzeige der NFL-Teams
 function zeigeTeams(teamDaten, listenId) {
     const liste = document.querySelector(listenId);
@@ -69,9 +283,24 @@ function zeigeTeams(teamDaten, listenId) {
         division.textContent = `Division: ${team.division}`;
         const stadion = document.createElement("p");
         stadion.textContent = `Stadion: ${team.stadion}`;
+        // Favoritenbutton erstellen
+        const favoritButton = document.createElement("button");
+        favoritButton.type = "button";
+        favoritButton.classList.add("favorit-button");
+        // Richtige Beschriftung setzen
+        aktualisiereFavoritenButton(favoritButton, team.name);
+        // Auf Klick reagieren
+        favoritButton.addEventListener("click", () => {
+            // Favorit hinzufügen oder entfernen
+            wechsleFavorit(team.name);
+            // Buttonbeschriftung aktualisieren
+            aktualisiereFavoritenButton(favoritButton, team.name);
+        });
+        // Elemente zur Teamkarte hinzufügen
         artikel.appendChild(titel);
         artikel.appendChild(division);
         artikel.appendChild(stadion);
+        artikel.appendChild(favoritButton);
         eintrag.appendChild(artikel);
         liste.appendChild(eintrag);
     }
@@ -107,8 +336,7 @@ function aktualisiereTeamAnzeige() {
     zeigeTeams(nfcTeams, "#team-liste-nfc");
     zeigeTeams(afcTeams, "#team-liste-afc");
     // Anzahl der gefundenen Teams anzeigen
-    anzahl.textContent =
-        `${gefilterteTeams.length} von ${teams.length} Teams gefunden`;
+    anzahl.textContent = `${gefilterteTeams.length} von ${teams.length} Teams gefunden`;
 }
 // Event-Listener für Suchfeld und Divisionsfilter
 const suchfeld = document.querySelector("#teamsuche");
@@ -128,3 +356,5 @@ if (formular) {
 }
 // Teams beim ersten Laden anzeigen
 aktualisiereTeamAnzeige();
+// Favoritenliste beim ersten Laden anzeigen
+zeigeFavoriten();

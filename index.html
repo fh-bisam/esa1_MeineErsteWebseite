@@ -1,105 +1,107 @@
 <!DOCTYPE html>
 <html lang="de">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FootballZone - Deine NFL Webseite</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FootballZone - Deine NFL Webseite</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-<body>
+    <body>
 
-    <header>
-        <h1>FootballZone</h1>
-        <p>Deine Welt des American Football</p>
-    </header>
+        <header>
+            <h1>FootballZone</h1>
+            <p>Deine Welt des American Football</p>
+        </header>
 
-    <nav aria-label="Hauptnavigation">
-        <a href="#start">Startseite</a>
-        <a href="#teams">NFL Teams</a>
-        <a href="#favoriten">Favoriten</a>
-        <a href="#wissen">NFL Wissen</a>
-    </nav>
+        <nav aria-label="Hauptnavigation">
+            <a href="#start">Startseite</a>
+            <a href="#teams">NFL Teams</a>
+            <a href="#favoriten">Favoriten</a>
+            <a href="#wissen">NFL Wissen</a>
+        </nav>
 
-    <main>
+        <main>
 
-        <section id="start">
-            <h2>Willkommen bei FootballZone</h2>
-            <p>
-                Entdecke die Welt der NFL und lerne
-                verschiedene American Football Teams kennen.
-            </p>
-        </section>
+            <section id="start">
+                <h2>Willkommen bei FootballZone</h2>
+                <p>
+                    Entdecke die Welt der NFL und lerne
+                    verschiedene American Football Teams kennen.
+                </p>
+            </section>
 
+            <section id="teams">
+                <h2>Die 32 NFL Teams</h2>
+                <p>
+                    Die NFL besteht aus 32 Mannschaften, die in zwei
+                    Conferences aufgeteilt sind. Jede Conference
+                    besitzt vier Divisions mit jeweils vier Teams.
+                </p>
+                <!-- Suche und Divisionsfilter -->
+                <form id="team-filter">
 
-        <section id="teams">
-            <h2>Die 32 NFL Teams</h2>
-            <p>
-                Die NFL besteht aus 32 Mannschaften, die in zwei
-                Conferences aufgeteilt sind. Jede Conference
-                besitzt vier Divisions mit jeweils vier Teams.
-            </p>
+                    <label for="teamsuche">Team suchen:</label>
+                    <input type="search" id="teamsuche" placeholder="z.B. Green Bay Packers">
 
-            <!-- Suche und Divisionsfilter -->
-            <form id="team-filter">
+                    <label for="division-filter">Division auswählen:</label>
+                    <select id="division-filter">
+                        <option value="alle">Alle Divisions</option>
+                        <option value="AFC East">AFC East</option>
+                        <option value="AFC North">AFC North</option>
+                        <option value="AFC South">AFC South</option>
+                        <option value="AFC West">AFC West</option>
+                        <option value="NFC East">NFC East</option>
+                        <option value="NFC North">NFC North</option>
+                        <option value="NFC South">NFC South</option>
+                        <option value="NFC West">NFC West</option>
+                    </select>
 
-                <label for="teamsuche">Team suchen:</label>
-                <input type="search" id="teamsuche" placeholder="z.B. Green Bay Packers">
+                </form>
 
-                <label for="division-filter">Division auswählen:</label>
-                <select id="division-filter">
-                    <option value="alle">Alle Divisions</option>
-                    <option value="AFC East">AFC East</option>
-                    <option value="AFC North">AFC North</option>
-                    <option value="AFC South">AFC South</option>
-                    <option value="AFC West">AFC West</option>
-                    <option value="NFC East">NFC East</option>
-                    <option value="NFC North">NFC North</option>
-                    <option value="NFC South">NFC South</option>
-                    <option value="NFC West">NFC West</option>
-                </select>
+                <p id="team-anzahl" aria-live="polite">
+                    32 von 32 Teams gefunden
+                </p>
 
-            </form>
+                <h3 class="konferenz-titel">
+                    AFC - American Football Conference
+                </h3>
+                <p>Die 16 Teams der AFC:</p>
+                <ul id="team-liste-afc" class="team-liste"></ul>
 
-            <p id="team-anzahl" aria-live="polite">
-                32 von 32 Teams gefunden
-            </p>
+                <h3 class="konferenz-titel">
+                    NFC - National Football Conference
+                </h3>
+                <p>Die 16 Teams der NFC:</p>
+                <ul id="team-liste-nfc" class="team-liste"></ul>
+            </section>
 
-            <h3 class="konferenz-titel">
-                AFC - American Football Conference
-            </h3>
-            <p>Die 16 Teams der AFC:</p>
-            <ul id="team-liste-afc" class="team-liste"></ul>
+            <section id="favoriten">
+                <h2>Meine Favoriten</h2>
 
-            <h3 class="konferenz-titel">
-                NFC - National Football Conference
-            </h3>
-            <p>Die 16 Teams der NFC:</p>
-            <ul id="team-liste-nfc" class="team-liste"></ul>
-        </section>
+                <p id="favoriten-hinweis" aria-live="polite">
+                    Noch keine Favoriten ausgewählt.
+                </p>
 
+                <ul id="favoriten-liste"></ul>
+            </section>
 
-        <section id="favoriten">
-            <h2>Meine Favoriten</h2>
-            <p>Hier kannst du deine Lieblingsmannschaft auswählen.</p>
-        </section>
+            <section id="wissen">
+                <h2>Wissenswertes über die NFL</h2>
+                <p>
+                    Die National Football League ist die
+                    professionelle American Football Liga der USA.
+                </p>
+            </section>
 
-        <section id="wissen">
-            <h2>Wissenswertes über die NFL</h2>
-            <p>
-                Die National Football League ist die
-                professionelle American Football Liga der USA.
-            </p>
-        </section>
+        </main>
 
-    </main>
+        <footer>
+            <p>FootballZone - Front-End Development ESA 1</p>
+        </footer>
 
-    <footer>
-        <p>FootballZone - Front-End Development ESA 1</p>
-    </footer>
-
-    <script src="js/app.js" defer></script>
-</body>
+        <script src="js/app.js" defer></script>
+    </body>
 
 </html>
